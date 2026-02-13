@@ -1,6 +1,5 @@
 import { pgTable, text, uuid } from "drizzle-orm/pg-core";
 
-
 export const slides = pgTable("slide_info", {
   id: uuid("id").primaryKey().defaultRandom(),
   title: text("title").notNull(),

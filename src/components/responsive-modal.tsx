@@ -1,0 +1,29 @@
+import React from "react";
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from "./ui/dialog";
+
+interface ResponsiveModalProps {
+  children: React.ReactNode;
+  open: boolean;
+  title: string;
+  onOpenChange: (open: boolean) => void;
+}
+
+const ResponsiveModal = ({
+  children,
+  open,
+  title,
+  onOpenChange,
+}: ResponsiveModalProps) => {
+  return (
+    <Dialog open={open} onOpenChange={onOpenChange}>
+      <DialogContent>
+        <DialogHeader>
+          <DialogTitle>{title}</DialogTitle>
+        </DialogHeader>
+        {children}
+      </DialogContent>
+    </Dialog>
+  );
+};
+
+export default ResponsiveModal;
